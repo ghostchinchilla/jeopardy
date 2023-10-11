@@ -1,0 +1,74 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c
+*/
+
+body {
+  box-sizing: border-box;
+  text-align: center;
+  font-family:'Verdana, Geneva, Tahoma, sans-serif';
+  background-color: lavenderblush;
+}
+
+h1 {
+  color:blueviolet;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+button {
+  color: indigo;
+  margin-bottom: 10px;
+}
+
+span {
+  color:blueviolet;
+}
+
+#game-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  margin: 10px auto;
+}
+
+#category-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#clues {
+  flex-direction: column;
+  /* border: 2px solid darkgray; */
+}
+
+.clue-row {
+  display: flex;
+}
+
+.clue-box {
+  display: flex;
+  border-radius: 5px;
+  margin: 5px;
+  height: 100px;
+  flex: 1;
+  border: 2px solid white;
+  background-color: lavender;
+  color: blueviolet;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-box {
+  font-size: 1rem;
+}
+
+.clicked-box {
+  font-size: 1rem;
+}

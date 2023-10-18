@@ -35,10 +35,11 @@ function makeBoard() {
      };
 
 
-     let catArray=[];
-     
+   
+     let categories= [];
 
       getCategories();
+
 
       async function getCategories(catId) { 
         
@@ -52,11 +53,18 @@ function makeBoard() {
 
 console.log(selected);
 
+
+
         for(let i=0; i<selected.length; i++) {
             let category=selected[i];
             const res = await axios.get(`https://jservice.io/api/clues?category=${category.id}`);
-console.log(res); 
+            // console.log(res);
+            let catRes = {category:category,
+                          clues: res.data};
+            categories.push(catRes);
+            
         }
+        console.log(categories);
     setCategories(selected);
 };
 
@@ -77,12 +85,24 @@ let cluesArray=[];
  async function getClue(e) {
     let child = e.currentTarget;
     child.classList.add('clicked-box');
+    let parent= child.parentElement;
+
+    document.querySelector('.clicked-box')
+
+    let catIndex = Array.prototype.slice.call(child.parentElement.children).indexOf(child)
+
+    let rowIndex= Array.prototype.slice.call(parent.parentElement.children).indexOf(parent)
+    let clue = categories[catIndex].clues[rowIndex]; 
+    let question = categories[catIndex].clues[rowIndex].question;
+
+    child.innerHTML = question;
     }
 
      
      
      
      function showQuestion(clue, target) {
+        
         
      }
 
